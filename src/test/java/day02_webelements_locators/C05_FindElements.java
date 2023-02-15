@@ -13,7 +13,7 @@ import java.util.List;
 public class C05_FindElements {
     public static void main(String[] args) throws InterruptedException {
 
-        // System.setProperty("Webdriver.chrome.driver","drivers/chromedriver");
+         System.setProperty("Webdriver.chrome.driver","drivers/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));

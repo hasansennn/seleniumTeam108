@@ -38,6 +38,7 @@ public class C04_WebElements {
         aramaKutusu.sendKeys("Nutella");
         aramaKutusu.submit();
         Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.close();
     }
 }

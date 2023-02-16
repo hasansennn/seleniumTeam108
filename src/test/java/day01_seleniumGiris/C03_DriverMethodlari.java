@@ -29,6 +29,7 @@ public class C03_DriverMethodlari {
             System.out.println("Test PASSED");
         }else {//gidemediysek
             System.out.println("Test FAILED");
+            driver.quit();
         }
     }
 }

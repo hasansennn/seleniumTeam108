@@ -1,4 +1,4 @@
-package day04_JUnitFramwork;
+package DAY04_tekrar;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Test;
@@ -9,13 +9,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class C02_ZeroTest {
+public class e02_ZeroTest {
 
 
     @Test
     public void test01(){
+
         WebDriverManager.chromedriver().setup();
-        WebDriver driver= new ChromeDriver();
+        WebDriver driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
@@ -34,16 +35,15 @@ public class C02_ZeroTest {
         //5. Sign in buttonuna tiklayin
         driver.findElement(By.xpath("//input[@name='submit']")).click();
 
-        // sayfa acilamazsa back tusuna basin
+        //6. sayfa acilamazsa back tusuna basin
         driver.navigate().back();
 
-        //6. Online Banking menusunden Pay Bills sayfasina gidin
+        //7. Online Banking menusunden Pay Bills sayfasina gidin
         driver.findElement(By.xpath("//strong[text()='Online Banking']")).click();
         driver.findElement(By.xpath("//span[text()='Pay Bills']")).click();
 
         //7. amount kismina yatirmak istediginiz herhangi bir miktari yazin
         driver.findElement(By.id("sp_amount")).sendKeys("200");
-
         //8. tarih kismina “2020-09-10” yazdirin
         driver.findElement(By.id("sp_date")).sendKeys("2020-09-10");
 
@@ -60,3 +60,8 @@ public class C02_ZeroTest {
         driver.close();
     }
 }
+
+
+
+
+

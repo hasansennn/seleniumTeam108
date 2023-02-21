@@ -30,7 +30,8 @@ public class C03_Radio_Buttons {
     }
     @After
     public void teardown(){
-        driver.close();
+
+        //driver.close();
     }
     @Test
     public void test01(){
@@ -39,7 +40,7 @@ public class C03_Radio_Buttons {
      //   driver.findElement(By.xpath("//button[text()='Allow essential and optional cookies']"))
             //    .click();
         //  c. Create an account buton’una basin
-        driver.findElement(By.xpath("(//a [@role='button'])[1]")).click();
+        driver.findElement(By.xpath("(//*[@role=\"button\"])[3]")).click();
 
         //  d. Radio button elementlerini locate edin ve size uygun olani secin
         WebElement femaleElementi= driver.findElement(By.xpath("(//input[@type='radio'])[1]"));

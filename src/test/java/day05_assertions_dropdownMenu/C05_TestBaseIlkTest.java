@@ -7,7 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import utilities.TestBase;
 
-public class TestBaseIlkTest extends TestBase {
+public class C05_TestBaseIlkTest extends TestBase {
 
 
     @Test

@@ -22,7 +22,8 @@ public class TestBase {
     }
     @After
     public void teardown(){
-        driver.close();
+
+        //driver.close();
     }
     public void bekle(int saniye){
         try {

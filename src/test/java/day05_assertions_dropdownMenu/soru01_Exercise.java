@@ -64,4 +64,13 @@ public class soru01_Exercise  {
      // WebElement logoElement= driver.findElement(By.xpath("//input[@id='search']"));
      Assert.assertTrue( searchBox.isEnabled());
     }
+    @Test
+    public void Test04(){
+    //  ○ wrongTitleTest => Sayfa basliginin “youtube” olmadigini dogrulayin
+        String unexpectedTitle="youtube";
+        String actualTitle2= driver.getTitle();
+        Assert.assertNotEquals(unexpectedTitle,actualTitle2);
+
+
+    }
 }

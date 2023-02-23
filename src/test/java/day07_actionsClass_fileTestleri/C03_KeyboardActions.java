@@ -2,6 +2,7 @@ package day07_actionsClass_fileTestleri;
 
 
 
+import com.github.javafaker.Faker;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -25,19 +26,19 @@ public class C03_KeyboardActions extends TestBase {
         WebElement isimKutusu= driver.findElement(By.xpath("//input[@placeholder='First name']"));
 
         Actions actions= new Actions(driver);
-       // Faker faker= new Faker();
-      //  String fakeEmailAdress=faker.internet().emailAddress();
+        Faker faker= new Faker();
+        String fakeEmailAdress=faker.internet().emailAddress();
 
         actions.click(isimKutusu)
-             //   .sendKeys(faker.name().firstName())
+               .sendKeys(faker.name().firstName())
                 .sendKeys(Keys.TAB)
-             //   .sendKeys(faker.name().lastName())
+                .sendKeys(faker.name().lastName())
                 .sendKeys(Keys.TAB)
-           //     .sendKeys(fakeEmailAdress)
+                .sendKeys(fakeEmailAdress)
                 .sendKeys(Keys.TAB)
-              //  .sendKeys(fakeEmailAdress)
+                .sendKeys(fakeEmailAdress)
                 .sendKeys(Keys.TAB)
-             //   .sendKeys(faker.internet().password())
+                .sendKeys(faker.internet().password())
                 .sendKeys(Keys.TAB)
                 .sendKeys(Keys.TAB)
                 .sendKeys("20")

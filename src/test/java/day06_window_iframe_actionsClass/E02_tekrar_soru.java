@@ -6,14 +6,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utilities.TestBase;
 
-public class C02_SwicthToIFrame extends TestBase {
-
+public class E02_tekrar_soru extends TestBase {
 
     @Test
     public void test01(){
-        // https://the-internet.herokuapp.com/iframe  adresine gidin
-        driver.get("https://the-internet.herokuapp.com/iframe");
-        // "Your content goes here." yazisinin gorunur oldugunu test edin
+
+
+            // https://the-internet.herokuapp.com/iframe  adresine gidin
+          driver.get("https://the-internet.herokuapp.com/iframe");
+            // "Your content goes here." yazisinin gorunur oldugunu test edin
+        WebElement yaziTest= driver.findElement(By.id("mce_0_ifr"));
+        driver.switchTo().frame(yaziTest);
+        WebElement yaziElementi=driver.findElement(By.tagName("p"));
+        Assert.assertTrue(yaziElementi.isDisplayed());
         /*
             Bazen locate islemimizden emin olmamiza ragmen
             Locator calismaz
@@ -26,21 +31,12 @@ public class C02_SwicthToIFrame extends TestBase {
             <iframe> kullanilir
             Biz de istedigimiz elementi kullanmak icin once
             o frame'e switch yapmaliyiz
-            */
-           // 1- gecis yapmak istediginiz frame'i locate edin
-             WebElement frameElementi= driver.findElement(By.id("mce_0_ifr"));
+            1- gecis yapmak istediginiz frame'i locate edin
+            2- switchTo() ile o frame'e gecis yapin
+            3- Sonra istediginiz element ile istediginiz islemi yapin
+         */
 
-           // 2- switchTo() ile o frame'e gecis yapin
-               driver.switchTo().frame(frameElementi);
-
-           // 3- Sonra istediginiz element ile istediginiz islemi yapin
-            WebElement yaziElementi = driver.findElement(By.tagName("p"));
-            Assert.assertTrue(yaziElementi.isDisplayed());
-
-
-
-
-        // Elemental Selenium linkine click yapin
+            // Elemental Selenium linkine click yapin
         /*
             Bir frame'e gecis yaptiktan sonra
             oradan cikincaya veya baska bir frame'e gecinceye kadar
@@ -48,9 +44,10 @@ public class C02_SwicthToIFrame extends TestBase {
             isimiz bittiginde veya baska frame'e gecmek istedigimizde
             once calisacagimiz yere gecis yapmaliyiz
          */
-        driver.switchTo().parentFrame(); // icice frame'lerde bir ust seviyeye cikar
-        //driver.switchTo().defaultContent();// direk anasayfaya cikar
-        driver.findElement(By.linkText("Elemental Selenium")).click();
-        bekle(3);
+
+        }
     }
-}
+
+
+
+

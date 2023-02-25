@@ -56,6 +56,7 @@ public class C01_ExplicitlyWait {
         WebElement itsGoneElementi=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()=\"It's gone!\"]")));
 
         Assert.assertTrue(itsGoneElementi.isDisplayed());
+
         driver.close();
 
     }

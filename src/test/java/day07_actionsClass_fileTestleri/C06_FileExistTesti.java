@@ -15,8 +15,10 @@ public class C06_FileExistTesti extends TestBase {
     public void test01(){
         //2. https://the-internet.herokuapp.com/download adresine gidelim.
         driver.get("https://the-internet.herokuapp.com/download");
+
         //3. logo.png dosyasını indirelim
         driver.findElement(By.linkText("logo.png")).click();
+
         //4. Dosyanın başarıyla indirilip indirilmediğini test edelim
         bekle(5);
 

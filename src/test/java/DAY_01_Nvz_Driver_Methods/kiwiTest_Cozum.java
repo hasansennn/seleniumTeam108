@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
@@ -28,9 +29,12 @@ public class kiwiTest_Cozum {
 
     @Before
     public void setUP(){
+        ChromeOptions ops = new ChromeOptions();
+        ops.addArguments("--remote-allow-origins=*");
+
         // ilgili kurulumlari tamamlayalim
         WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
+        driver=new ChromeDriver(ops);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
@@ -49,7 +53,7 @@ public class kiwiTest_Cozum {
         WebElement currency= driver.findElement(By.xpath("//select[@class='Select__StyledSelect-sc-2ijy2y-1 jZBCHP']"));
         Select parabirimi=new Select(currency);
         parabirimi.selectByValue("try");
-        driver.findElement(By.xpath("//*[text()='Save & continue']")).click();
+        driver.findElement(By.xpath("//*[text()='Kaydet ve devam et']")).click();
         // Sectiginiz dil ve para birimini dogrulayin
         Assert.assertTrue(driver.findElement(By.xpath("//div[text()='TRY']")).getText().contains("TRY"));
         Assert.assertTrue(driver.getCurrentUrl().contains("tr"));
@@ -73,7 +77,9 @@ public class kiwiTest_Cozum {
         driver.findElement(By.xpath("//div[@data-value='2023-03-16']")).click();
         driver.findElement(By.xpath("//*[text()='Tarihleri ayarla']")).click();
         // Gidis tarihi kismina erisim saglayarak gidecegimiz gunu secelim ve booking i iptal edelim
-        driver.findElement(By.xpath("//*[text()='Booking.com ile konaklama arayın']")).click();
+        //driver.findElement(By.xpath("//*[text()='Booking.com ile konaklama arayın']")).click();
+       // driver.findElement(By.xpath("//a[@data-test='LandingSearchButton']")).click();
+        driver.findElement(By.xpath("//div[@class='Checkbox__StyledIconContainer-sc-y66hzm-0 kPpSfm']")).click();
         driver.findElement(By.xpath("//a[@data-test='LandingSearchButton']")).click();
 
 

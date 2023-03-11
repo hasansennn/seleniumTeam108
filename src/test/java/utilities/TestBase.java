@@ -7,6 +7,7 @@ import org.junit.BeforeClass;
 import org.junit.experimental.theories.Theories;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
@@ -15,8 +16,11 @@ public class TestBase {
     public WebDriver driver;
     @Before
     public void setup(){
+        ChromeOptions ops = new ChromeOptions();
+        ops.addArguments("--remote-allow-origins=*");
+
         WebDriverManager.chromedriver().setup();
-        driver= new ChromeDriver();
+        driver= new ChromeDriver(ops);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }

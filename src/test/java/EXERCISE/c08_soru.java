@@ -1,7 +1,5 @@
-package day02_webelements_locators;
+package EXERCISE;
 
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 

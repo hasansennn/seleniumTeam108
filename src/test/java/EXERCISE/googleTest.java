@@ -1,4 +1,4 @@
-package DAY_01_Nvz_Driver_Methods;
+package EXERCISE;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;

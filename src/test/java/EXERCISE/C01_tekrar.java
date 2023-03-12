@@ -1,13 +1,10 @@
-package day09_excell_screenshot_jsExecutor;
+package EXERCISE;
 
-import org.apache.commons.collections4.Get;
-import org.apache.commons.io.input.ReaderInputStream;
 import org.apache.poi.ss.usermodel.*;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class C01_tekrar {

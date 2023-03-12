@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 
-public class kiwiTest_Cozum {
+public class kiwiTestt {
 
     WebDriver driver;
 
@@ -47,6 +47,7 @@ public class kiwiTest_Cozum {
         // Sag ust kisimdan dil ve para birimi secenegini Turkiye ve TL olarak secin
         driver.findElement(By.xpath("(//div[@class='ButtonPrimitiveContent__StyledButtonPrimitiveContent-sc-1nfggrh-0 jIgbVC'])[7]")).click();
         Thread.sleep(1000);
+        //(//div[@class='ButtonPrimitiveContentChildren__StyledButtonPrimitiveContentChildren-sc-mra4yy-0 dkQFNd'])[7]
         WebElement language= driver.findElement(By.xpath("//select[@class='Select__StyledSelect-sc-2ijy2y-1 bStxNw']"));
         Select dilsecimi=new Select(language);
         dilsecimi.selectByVisibleText("Türkçe");

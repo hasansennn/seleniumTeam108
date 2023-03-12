@@ -1,4 +1,4 @@
-package day05_assertions_dropdownMenu;
+package EXERCISE;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.AfterClass;

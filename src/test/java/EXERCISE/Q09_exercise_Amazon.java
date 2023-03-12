@@ -1,9 +1,7 @@
-package Practice;
+package EXERCISE;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 import org.apache.commons.io.FileUtils;
-import org.apache.poi.ss.formula.functions.T;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -81,7 +79,7 @@ public class Q09_exercise_Amazon extends TestBase {
 
     @After
     public void thearDown(){
-       // driver.quit();
+        driver.quit();
     }
 
 }

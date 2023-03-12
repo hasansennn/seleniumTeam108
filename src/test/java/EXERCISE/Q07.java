@@ -1,4 +1,4 @@
-package Practice ;
+package EXERCISE;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;

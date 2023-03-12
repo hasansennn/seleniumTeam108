@@ -7,6 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
@@ -25,7 +26,9 @@ public class C04_DropdownMenu {
     @BeforeClass
     public static void setup(){
         WebDriverManager.chromedriver().setup();
-        driver= new ChromeDriver();
+        ChromeOptions ops = new ChromeOptions();
+        ops.addArguments("--remote-allow-origins=*");
+        driver= new ChromeDriver(ops);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.get("https://www.amazon.com/");
@@ -40,7 +43,7 @@ public class C04_DropdownMenu {
         WebElement ddm = driver.findElement(By.xpath("//select[@id='searchDropdownBox']"));
         Select select = new Select(ddm);
         int actualOptionSayisi = select.getOptions().size();
-        int expectedOptionSayisi=44;
+        int expectedOptionSayisi=28;
         Assert.assertEquals(expectedOptionSayisi,actualOptionSayisi);
     }
     @Test

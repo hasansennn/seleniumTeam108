@@ -1,4 +1,4 @@
-package day03_xpath_cssSelector;
+package EXERCISE;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
-import java.util.List;
 
 public class soru3 {
     public static void main(String[] args) throws InterruptedException {

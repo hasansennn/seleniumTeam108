@@ -1,4 +1,4 @@
-package Practice;
+package EXERCISE;
 
 public class Q04_odev {
     public static void main(String[] args) {

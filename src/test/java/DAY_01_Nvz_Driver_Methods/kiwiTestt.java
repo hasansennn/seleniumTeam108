@@ -44,9 +44,11 @@ public class kiwiTestt {
         // https://www.kiwi.com sayfasina gidin
         driver.get("https://www.kiwi.com");
         driver.findElement(By.xpath("(//div[@class='ButtonPrimitiveContent__StyledButtonPrimitiveContent-sc-1nfggrh-0 iFkUjC'])[3]")).click();
+
         // Sag ust kisimdan dil ve para birimi secenegini Turkiye ve TL olarak secin
         driver.findElement(By.xpath("(//div[@class='ButtonPrimitiveContent__StyledButtonPrimitiveContent-sc-1nfggrh-0 jIgbVC'])[7]")).click();
         Thread.sleep(1000);
+
         //(//div[@class='ButtonPrimitiveContentChildren__StyledButtonPrimitiveContentChildren-sc-mra4yy-0 dkQFNd'])[7]
         WebElement language= driver.findElement(By.xpath("//select[@class='Select__StyledSelect-sc-2ijy2y-1 bStxNw']"));
         Select dilsecimi=new Select(language);
@@ -55,12 +57,15 @@ public class kiwiTestt {
         Select parabirimi=new Select(currency);
         parabirimi.selectByValue("try");
         driver.findElement(By.xpath("//*[text()='Kaydet ve devam et']")).click();
+
         // Sectiginiz dil ve para birimini dogrulayin
         Assert.assertTrue(driver.findElement(By.xpath("//div[text()='TRY']")).getText().contains("TRY"));
         Assert.assertTrue(driver.getCurrentUrl().contains("tr"));
+
         // Ucus secenegi olarak tek yon secelim
         driver.findElement(By.xpath("(//*[text()='Gidiş Dönüş'])[1]")).click();
         driver.findElement(By.xpath("//*[text()='Tek Yön']")).click();
+
         // Kalkis ve varis boxlarini temizleyerek kalkis ve varis ulkesini kendimiz belirleyelim
         Thread.sleep(1000);
         driver.findElement(By.xpath("(//*[@preserveAspectRatio='xMidYMid meet'])[29]")).click();
@@ -77,6 +82,7 @@ public class kiwiTestt {
 
         driver.findElement(By.xpath("//div[@data-value='2023-03-16']")).click();
         driver.findElement(By.xpath("//*[text()='Tarihleri ayarla']")).click();
+
         // Gidis tarihi kismina erisim saglayarak gidecegimiz gunu secelim ve booking i iptal edelim
         //driver.findElement(By.xpath("//*[text()='Booking.com ile konaklama arayın']")).click();
        // driver.findElement(By.xpath("//a[@data-test='LandingSearchButton']")).click();
